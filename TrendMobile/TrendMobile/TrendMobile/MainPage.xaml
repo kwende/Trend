@@ -5,10 +5,31 @@
              x:Class="TrendMobile.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Entry x:Name="EntryBox"></Entry>
+        <Button x:Name="ButtonEntry" Text="Add"></Button>
+        <ScrollView>
+            <StackLayout>
+                <Button x:Name="SomethingButton" Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+                <Button Text="Something"></Button>
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>
