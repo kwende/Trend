@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendMobile.Android", "TrendMobile\TrendMobile.Android\TrendMobile.Android.csproj", "{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TrendMobile", "TrendMobile\TrendMobile\TrendMobile.shproj", "{462D61CF-CF7D-4B40-852A-F601F4864E97}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TrendMobile\TrendMobile\TrendMobile.projitems*{462d61cf-cf7d-4b40-852a-f601f4864e97}*SharedItemsImports = 13
+		TrendMobile\TrendMobile\TrendMobile.projitems*{aa8ab53c-ceef-4926-a3c9-e99234db0709}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2840A42F-EA63-476A-9ECF-74977176B11C}
+	EndGlobalSection
+EndGlobal
