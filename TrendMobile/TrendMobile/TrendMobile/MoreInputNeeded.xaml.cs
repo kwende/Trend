@@ -16,21 +16,18 @@ namespace TrendMobile
 		{
 			InitializeComponent ();
 
-            this.Appearing += MoreInputNeeded_Appearing;
-		}
-
-        private void MoreInputNeeded_Appearing(object sender, EventArgs e)
-        {
             this.OkayButton.Clicked += OkayButton_Clicked;
             this.CancelButton.Clicked += CancelButton_Clicked;
         }
 
-        private void CancelButton_Clicked(object sender, EventArgs e)
+        async private void CancelButton_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PopModalAsync(); 
         }
 
-        private void OkayButton_Clicked(object sender, EventArgs e)
+        async private void OkayButton_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PopModalAsync();
         }
     }
 }

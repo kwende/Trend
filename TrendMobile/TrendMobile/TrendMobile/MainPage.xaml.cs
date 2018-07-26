@@ -13,19 +13,15 @@ namespace TrendMobile
 		{
 			InitializeComponent();
 
-            this.Appearing += MainPage_Appearing;
-		}
-
-        private void MainPage_Appearing(object sender, EventArgs e)
-        {
             this.ButtonEntry.Clicked += ButtonEntry_Clicked;
             this.SomethingButton.Clicked += SomethingButton_Clicked;
         }
 
-        private void SomethingButton_Clicked(object sender, EventArgs e)
+        async private void SomethingButton_Clicked(object sender, EventArgs e)
         {
-            MoreInputNeeded moreInputPage = new MoreInputNeeded(); 
-            // here
+            MoreInputNeeded moreInputPage = new MoreInputNeeded();
+
+            await Navigation.PushModalAsync(moreInputPage); 
         }
 
         private void ButtonEntry_Clicked(object sender, EventArgs e)
