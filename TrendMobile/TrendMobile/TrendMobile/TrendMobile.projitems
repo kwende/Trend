@@ -16,6 +16,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)DataContracts\Entry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataContracts\EntryType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataContracts\Enums\UserChoice.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

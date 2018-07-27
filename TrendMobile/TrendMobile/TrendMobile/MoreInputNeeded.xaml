@@ -7,6 +7,7 @@
             <Entry x:Name="AdditionalEntry"></Entry>
             <Button x:Name="OkayButton" Text="Okay"></Button>
             <Button x:Name="CancelButton" Text="Cancel"></Button>
+            <Button x:Name="DeleteButton" Text="Delete"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

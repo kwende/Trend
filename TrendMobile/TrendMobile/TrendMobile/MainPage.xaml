@@ -8,8 +8,7 @@
         <Entry x:Name="EntryBox"></Entry>
         <Button x:Name="ButtonEntry" Text="Add"></Button>
         <ScrollView>
-            <StackLayout>
-                <Button x:Name="SomethingButton" Text="Something"></Button>
+            <StackLayout x:Name="ItemsList">
             </StackLayout>
         </ScrollView>
     </StackLayout>

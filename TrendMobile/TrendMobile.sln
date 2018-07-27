@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendMobile.Android", "Tren
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TrendMobile", "TrendMobile\TrendMobile\TrendMobile.shproj", "{462D61CF-CF7D-4B40-852A-F601F4864E97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendWeb", "TrendWeb\TrendWeb.csproj", "{7349E9F9-5C01-471D-9684-8DEFB440AE53}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		TrendMobile\TrendMobile\TrendMobile.projitems*{462d61cf-cf7d-4b40-852a-f601f4864e97}*SharedItemsImports = 13
@@ -23,6 +25,10 @@ Global
 		{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA8AB53C-CEEF-4926-A3C9-E99234DB0709}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7349E9F9-5C01-471D-9684-8DEFB440AE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7349E9F9-5C01-471D-9684-8DEFB440AE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7349E9F9-5C01-471D-9684-8DEFB440AE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7349E9F9-5C01-471D-9684-8DEFB440AE53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
