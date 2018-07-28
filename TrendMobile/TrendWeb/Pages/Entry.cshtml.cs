@@ -13,47 +13,48 @@ namespace TrendWeb.Pages
     {
         public JsonResult OnGet()
         {
-            JsonResult result = new JsonResult("");
 
-            string command = HttpContext.Request.Query["command"];
-            string name = HttpContext.Request.Query["name"];
-            string id = HttpContext.Request.Query["id"];
+            //JsonResult result = new JsonResult("");
 
-            TrendService service = HttpContext.RequestServices.GetService(typeof(TrendService)) as TrendService;
+            //string command = HttpContext.Request.Query["command"];
+            //string name = HttpContext.Request.Query["name"];
+            //string id = HttpContext.Request.Query["id"];
 
-            // one at a time. 
-            if (command == "create" && !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(id))
-            {
-                service.AddEntryType(name, id);
-            }
-            // multiple
-            else if (command == "sync")
-            {
-                string[] names = null;
-                string[] ids = null;
+            //TrendService service = HttpContext.RequestServices.GetService(typeof(TrendService)) as TrendService;
 
-                if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(id))
-                {
-                    names = new string[0];
-                    ids = new string[0];
-                }
-                else
-                {
-                    names = name.Split(",").Select(n => n.Trim()).ToArray();
-                    ids = id.Split(",").Select(n => n.Trim()).ToArray();
-                }
+            //// one at a time. 
+            //if (command == "create" && !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(id))
+            //{
+            //    service.AddEntryType(name, id);
+            //}
+            //// multiple
+            //else if (command == "sync")
+            //{
+            //    string[] names = null;
+            //    string[] ids = null;
 
-                service.SyncEntryTypes(names, ids);
-            }
-            else if (command == "delete" && !string.IsNullOrEmpty(id))
-            {
-                service.DeleteEntryType(id);
-            }
-            else if (command == "get")
-            {
-                List<EntryType> entryTypes = service.GetEntryTypes();
-                result = new JsonResult(entryTypes);
-            }
+            //    if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(id))
+            //    {
+            //        names = new string[0];
+            //        ids = new string[0];
+            //    }
+            //    else
+            //    {
+            //        names = name.Split(",").Select(n => n.Trim()).ToArray();
+            //        ids = id.Split(",").Select(n => n.Trim()).ToArray();
+            //    }
+
+            //    service.SyncEntryTypes(names, ids);
+            //}
+            //else if (command == "delete" && !string.IsNullOrEmpty(id))
+            //{
+            //    service.DeleteEntryType(id);
+            //}
+            //else if (command == "get")
+            //{
+            //    List<EntryType> entryTypes = service.GetEntryTypes();
+            //    result = new JsonResult(entryTypes);
+            //}
 
             return result;
         }
