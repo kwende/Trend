@@ -6,7 +6,10 @@
 
     <StackLayout>
         <Entry x:Name="EntryBox"></Entry>
-        <Button x:Name="ButtonEntry" Text="Add"></Button>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="ButtonEntry" Text="Add"></Button>
+            <Button x:Name="Sync" Text="Sync"></Button>
+        </StackLayout>
         <ScrollView>
             <StackLayout x:Name="ItemsList">
             </StackLayout>

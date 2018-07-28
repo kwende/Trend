@@ -3,6 +3,7 @@ using PCLStorage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using TrendMobile.DataContracts;
@@ -19,10 +20,18 @@ namespace TrendMobile
             InitializeComponent();
 
             this.ButtonEntry.Clicked += ButtonEntry_Clicked;
+            this.Sync.Clicked += Sync_Clicked;
             EntryTypes = new List<EntryType>();
 
             LoadFromDisk(EntryTypes);
             RefreshUI(); 
+        }
+
+        private void Sync_Clicked(object sender, EventArgs e)
+        {
+            StringContent toSend = new StringContent(JsonConvert.SerializeObject(EntryTypes), Encoding.UTF8, "application/json"); 
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = client.PostAsync("http://169.254.80.80:37488/Entry/", toSend).Result; 
         }
 
         private void LoadFromDisk(List<EntryType> list)
