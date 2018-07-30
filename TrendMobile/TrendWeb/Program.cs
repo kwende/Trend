@@ -19,6 +19,7 @@ namespace TrendWeb
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .UseUrls("http://10.0.2.2:37488")
                 .UseStartup<Startup>()
                 .Build();
     }

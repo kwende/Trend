@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -11,52 +12,26 @@ namespace TrendWeb.Pages
 {
     public class EntryModel : PageModel
     {
+        public void OnPost()
+        {
+            Request.Body.Seek(0, SeekOrigin.Begin);
+            string jsonData = new StreamReader(Request.Body).ReadToEnd();
+
+            TrendService service = HttpContext.RequestServices.GetService(typeof(TrendService)) as TrendService;
+
+            service.InsertJSON("userId", DateTime.Now, jsonData);
+        }
+
         public JsonResult OnGet()
         {
+            Request.Body.Seek(0, SeekOrigin.Begin);
+            string jsonData = new StreamReader(Request.Body).ReadToEnd();
 
-            //JsonResult result = new JsonResult("");
+            TrendService service = HttpContext.RequestServices.GetService(typeof(TrendService)) as TrendService;
 
-            //string command = HttpContext.Request.Query["command"];
-            //string name = HttpContext.Request.Query["name"];
-            //string id = HttpContext.Request.Query["id"];
+            service.InsertJSON("userId", DateTime.Now, jsonData); 
 
-            //TrendService service = HttpContext.RequestServices.GetService(typeof(TrendService)) as TrendService;
-
-            //// one at a time. 
-            //if (command == "create" && !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(id))
-            //{
-            //    service.AddEntryType(name, id);
-            //}
-            //// multiple
-            //else if (command == "sync")
-            //{
-            //    string[] names = null;
-            //    string[] ids = null;
-
-            //    if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(id))
-            //    {
-            //        names = new string[0];
-            //        ids = new string[0];
-            //    }
-            //    else
-            //    {
-            //        names = name.Split(",").Select(n => n.Trim()).ToArray();
-            //        ids = id.Split(",").Select(n => n.Trim()).ToArray();
-            //    }
-
-            //    service.SyncEntryTypes(names, ids);
-            //}
-            //else if (command == "delete" && !string.IsNullOrEmpty(id))
-            //{
-            //    service.DeleteEntryType(id);
-            //}
-            //else if (command == "get")
-            //{
-            //    List<EntryType> entryTypes = service.GetEntryTypes();
-            //    result = new JsonResult(entryTypes);
-            //}
-
-            return result;
+            return new JsonResult("");
         }
     }
 }

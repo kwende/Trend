@@ -29,9 +29,11 @@ namespace TrendMobile
 
         private void Sync_Clicked(object sender, EventArgs e)
         {
-            StringContent toSend = new StringContent(JsonConvert.SerializeObject(EntryTypes), Encoding.UTF8, "application/json"); 
+            int[] testArray = new int[] { 1, 2, 3 }; 
+            StringContent toSend = new StringContent(JsonConvert.SerializeObject(testArray), Encoding.UTF8, "application/json"); 
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = client.PostAsync("http://169.254.80.80:37488/Entry/", toSend).Result; 
+            HttpResponseMessage response = client.PostAsync(new Uri("http://10.0.2.2/TrendWeb/Entry"), toSend).Result;
+            EntryBox.Text = response.ReasonPhrase; 
         }
 
         private void LoadFromDisk(List<EntryType> list)
