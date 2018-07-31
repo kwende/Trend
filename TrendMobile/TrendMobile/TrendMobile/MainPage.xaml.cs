@@ -31,7 +31,7 @@ namespace TrendMobile
         {
             StringContent toSend = new StringContent(JsonConvert.SerializeObject(EntryTypes), Encoding.UTF8, "application/json"); 
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = client.PostAsync(new Uri("http://10.0.2.2/TrendWeb/api/Entry"), toSend).Result;
+            HttpResponseMessage response = client.PostAsync(new Uri("http://www.ben-rush.net/trend/Entry"), toSend).Result;
             EntryBox.Text = response.ReasonPhrase; 
         }
 

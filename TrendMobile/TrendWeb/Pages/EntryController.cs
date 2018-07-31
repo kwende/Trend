@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+using TrendWeb.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,7 +18,12 @@ namespace TrendWeb.Pages
         [HttpPost]
         public void Post([FromBody]JToken jsonbody)
         {
-            string json = jsonbody.ToString(); 
+            string json = jsonbody.ToString();
+
+            TrendService service = HttpContext.RequestServices.GetService(typeof(TrendService)) as TrendService;
+
+            service.InsertJSON("brush", DateTime.Now, json); 
+
             return; 
         }
     }
