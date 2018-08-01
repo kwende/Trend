@@ -26,5 +26,11 @@ namespace TrendWeb.Pages
 
             return; 
         }
+
+        [HttpGet]
+        public JsonResult Test()
+        {
+            return new JsonResult("Worked!"); 
+        }
     }
 }
