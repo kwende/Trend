@@ -6,19 +6,17 @@
         <StackLayout>
             <Picker x:Name="TypePicker" IsVisible="False">
                 <Picker.Items>
-                    <x:String>Zero Through Five</x:String>
+                    <x:String>Level</x:String>
                     <x:String>Decimal</x:String>
                     <x:String>Single Tap</x:String>
                 </Picker.Items>
             </Picker>
-            <Picker x:Name="ZeroThroughFive" IsVisible="False">
+            <Picker x:Name="Level" IsVisible="False">
                 <Picker.Items>
-                    <x:String>Zero</x:String>
-                    <x:String>One</x:String>
-                    <x:String>Two</x:String>
-                    <x:String>Three</x:String>
-                    <x:String>Four</x:String>
-                    <x:String>FIve</x:String>
+                    <x:String>None</x:String>
+                    <x:String>Low</x:String>
+                    <x:String>Medium</x:String>
+                    <x:String>High</x:String>
                 </Picker.Items>
             </Picker>
             <Entry Keyboard="Numeric" x:Name="DecimalPicker" IsVisible="False" />

@@ -31,7 +31,17 @@ namespace TrendMobile
         {
             StringContent toSend = new StringContent(JsonConvert.SerializeObject(EntryTypes), Encoding.UTF8, "application/json"); 
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = client.PostAsync(new Uri("http://www.ben-rush.net/trend/api/Entry"), toSend).Result;
+            Task<HttpResponseMessage> response = 
+                client.PostAsync(new Uri("http://www.ben-rush.net/trend/api/Entry"), toSend);
+            response.ContinueWith((continuationAction) =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    DisplayAlert("Message response",
+                        continuationAction.Result.StatusCode.ToString(), "OK");
+                }); 
+            }); 
+            //HttpResponseMessage response = client.PostAsync(new Uri("http://www.ben-rush.net/trend/api/Entry"), toSend).Result;
         }
 
         private void LoadFromDisk(List<EntryType> list)
