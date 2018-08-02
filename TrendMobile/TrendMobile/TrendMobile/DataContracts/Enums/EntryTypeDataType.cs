@@ -7,8 +7,7 @@ namespace TrendMobile.DataContracts.Enums
     public enum EntryTypeDataType
     {
         Unspecified,
-        OneThroughTen,
-        LowMediumHigh,
+        ZeroThroughFive,
         Decimal,
         SingleTap
     }

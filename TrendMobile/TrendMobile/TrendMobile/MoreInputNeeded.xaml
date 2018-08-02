@@ -6,37 +6,29 @@
         <StackLayout>
             <Picker x:Name="TypePicker" IsVisible="False">
                 <Picker.Items>
-                    <x:String>One Through Ten</x:String>
-                    <x:String>Low Medium High</x:String>
+                    <x:String>Zero Through Five</x:String>
                     <x:String>Decimal</x:String>
                     <x:String>Single Tap</x:String>
                 </Picker.Items>
             </Picker>
-            <Picker x:Name="OneThroughTenPicker" IsVisible="False">
+            <Picker x:Name="ZeroThroughFive" IsVisible="False">
                 <Picker.Items>
+                    <x:String>Zero</x:String>
                     <x:String>One</x:String>
                     <x:String>Two</x:String>
                     <x:String>Three</x:String>
                     <x:String>Four</x:String>
-                    <x:String>Five</x:String>
-                    <x:String>Six</x:String>
-                    <x:String>Seven</x:String>
-                    <x:String>Eight</x:String>
-                    <x:String>Nine</x:String>
-                    <x:String>Ten</x:String>
-                </Picker.Items>
-            </Picker>
-            <Picker x:Name="LowMediumHighPicker" IsVisible="False">
-                <Picker.Items>
-                    <x:String>Low</x:String>
-                    <x:String>Medium</x:String>
-                    <x:String>High</x:String>
+                    <x:String>FIve</x:String>
                 </Picker.Items>
             </Picker>
             <Entry Keyboard="Numeric" x:Name="DecimalPicker" IsVisible="False" />
             <Button x:Name="OkayButton" Text="Okay"></Button>
             <Button x:Name="CancelButton" Text="Cancel"></Button>
             <Button x:Name="DeleteButton" Text="Delete"></Button>
+            <ScrollView>
+                <StackLayout x:Name="History">
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

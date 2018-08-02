@@ -30,13 +30,9 @@ namespace TrendMobile
 
                 this.TypePicker.SelectedIndexChanged += TypePicker_SelectedIndexChanged;
             }
-            else if(entryType.DataType == EntryTypeDataType.OneThroughTen)
+            else if(entryType.DataType == EntryTypeDataType.ZeroThroughFive)
             {
-                this.OneThroughTenPicker.IsVisible = true; 
-            }
-            else if(entryType.DataType == EntryTypeDataType.LowMediumHigh)
-            {
-                this.LowMediumHighPicker.IsVisible = true; 
+                this.ZeroThroughFive.IsVisible = true; 
             }
             else if(entryType.DataType == EntryTypeDataType.Decimal)
             {
@@ -51,21 +47,41 @@ namespace TrendMobile
             ExtraValue = null;
             UserChoice = UserChoice.Unknown;
             ForEntryType = entryType;
+
+            if(entryType.Entries != null)
+            {
+                DataContracts.Entry[] entries = entryType.Entries.OrderByDescending(n => n.Created).Take(10).ToArray();
+
+                foreach (DataContracts.Entry entry in entries)
+                {
+                    if(entryType.DataType == EntryTypeDataType.SingleTap)
+                    {
+                        this.History.Children.Add(new Label
+                        {
+                            Text = $"{entry.Created}"
+                        });
+                    }
+                    else
+                    {
+                        this.History.Children.Add(new Label
+                        {
+                            Text = $"{entry.Value} on {entry.Created}"
+                        });
+                    }
+                   
+                }
+            }
+           
         }
 
         private void TypePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue= TypePicker.SelectedItem.ToString();
 
-            if(selectedValue == "One Through Ten")
+            if(selectedValue == "Zero Through Five")
             {
-                ForEntryType.DataType = EntryTypeDataType.OneThroughTen;
-                this.OneThroughTenPicker.IsVisible = true;
-            }
-            else if(selectedValue == "Low Medium High")
-            {
-                ForEntryType.DataType = EntryTypeDataType.LowMediumHigh;
-                this.LowMediumHighPicker.IsVisible = true; 
+                ForEntryType.DataType = EntryTypeDataType.ZeroThroughFive;
+                this.ZeroThroughFive.IsVisible = true; 
             }
             else if(selectedValue == "Decimal")
             {
@@ -99,12 +115,14 @@ namespace TrendMobile
 
         async private void OkayButton_Clicked(object sender, EventArgs e)
         {
-            double val = 0.0;
-            //if (double.TryParse(AdditionalEntry.Text, out val))
-            //{
-            //    ExtraValue = val;
-            //}
-
+            if(ForEntryType.DataType == EntryTypeDataType.ZeroThroughFive)
+            {
+                ExtraValue = ZeroThroughFive.SelectedIndex; 
+            }
+            else if(ForEntryType.DataType == EntryTypeDataType.Decimal)
+            {
+                ExtraValue = double.Parse(DecimalPicker.Text); 
+            }
             UserChoice = UserChoice.Create;
             await Navigation.PopModalAsync();
         }
